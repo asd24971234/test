@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info"></div>
+<script>
+    function fun(){
+        return new Promise((resolv,reject)=>{
+            setTimeout(function(){
+                resolv(Math.random());
+            },500)
+
+        })
+    }
+    fun()
+    .then(r=>{
+        info.innerHTML+= `<p>${r}</p>`;
+    })
+
+    const p1 ={
+        name:"bell",
+        age:28
+    }
+    const p2 = {
+        name:'john',
+        age:26
+    }
+    const p3 ={
+        name:'fred',
+        age:28
+    }
+    p1.next=p2
+    p2.next=p3
+    const str = JSON.stringify(p1)
+    info.innerHTML+= `<p>${str}</p>`;
+
+</script>
+    
+</body>
+</html>

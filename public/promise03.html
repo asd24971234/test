@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info"></div>
+<script>
+    function fun(mesc){
+        return new Promise((resolv,reject)=>{
+            setTimeout(function(){
+                resolv(Math.random()*mesc);
+            },mesc)
+
+        })
+    }
+    async function dosomething(){
+    const ar =[];
+    ar.push(await fun(500))
+    ar.push(await fun(600))
+    ar.push(await fun(700))
+    return ar
+
+    
+       
+}
+let br =dosomething();
+console.log('br:'+br)
+
+    
+
+    
+</script>
+    
+</body>
+</html>

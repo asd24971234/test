@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="doAjax()">doajax</button>
+    <div id="info"></div>
+    <button>test</button>
+    <input type="text">
+<script>
+    function doAjax(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (event) {
+            console.log(xhr.readyState, xhr.status);
+        }
+        xhr.open('GET', '/pending', false); // 同步
+        xhr.send();
+    }
+    
+
+</script>
+</body>
+
+</html>
